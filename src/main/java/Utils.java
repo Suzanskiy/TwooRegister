@@ -5,7 +5,7 @@ public class Utils {
         char[] chars = "abcdefghijklmnopqrstuvwxyz".toCharArray();
         StringBuilder sb = new StringBuilder(8);
         Random random = new Random();
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 8; i++) {
             char c = chars[random.nextInt(chars.length)];
             sb.append(c);
         }
