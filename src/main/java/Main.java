@@ -7,6 +7,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.security.Key;
 import java.util.concurrent.TimeUnit;
 
 public class Main {
@@ -23,7 +24,12 @@ public class Main {
         Logic mainLogin = new Logic(driver);
         mainLogin.execute();
 
+        tearDown();
+    }
 
+    private static void tearDown() {
+        driver.close();
+        driver.quit();
     }
 
 
@@ -47,7 +53,8 @@ public class Main {
     public static void openSite() {
         chromePage.chromeApp().click();
         chromePage.chromeUrlBar().sendKeys("https://www.twoo.com/?login=0#login");
-        chromePage.siteUrl().click();
+        chromePage.chromeUrlBar().sendKeys(Keys.ENTER);
+
 
     }
 }
